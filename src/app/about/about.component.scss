@@ -1,0 +1,14 @@
+.md-card-wrapper {
+    position: relative;
+      width: 50%;
+    span {
+        position: absolute;
+        top: 10%;
+         right: 32%; 
+        color: white;
+        font-size: 30px;
+        background-color: rgb(240, 39, 16);
+        height: 50px;
+        padding: 10px;
+      }
+  }

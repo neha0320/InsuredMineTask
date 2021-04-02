@@ -1,0 +1,49 @@
+<div mat-dialog-content>
+  <form [formGroup]="myForm">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Email Id</label>
+      <input type="email" class="form-control" formControlName="id" id="formGroupExampleInput"
+        placeholder="abc@media.com">
+    </div>
+    <div *ngIf="myForm.controls['id'].errors?.required && (myForm.controls['id'].dirty ||
+      myForm.controls['id'].touched)"
+      class="alert alert-danger">
+      Email is Required
+    </div>
+    <div *ngIf="myForm.controls['id'].errors && myForm.controls['id'].errors?.email &&
+      (myForm.controls['id'].dirty ||
+      myForm.controls['id'].touched)" 
+      class="alert alert-danger">Email
+      must be a valid email address
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Password</label>
+      <input type="password" class="form-control" formControlName="password" id="formGroupExampleInput2"
+        placeholder="Password">
+
+    </div>
+    <div
+      *ngIf="myForm.controls['password'].invalid && (myForm.controls['password'].dirty || myForm.controls['password'].touched)"
+      class="alert alert-danger">
+
+      Password is Required
+
+    </div>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="submit()">Login</button>
+</div>
+<br>
+<br>
+
+<div class="row">
+  <div class="col text-left">
+    <h3 class="text-left">Not an Account?</h3>
+  </div>
+  <div class="col text-right">
+    <button mat-raised-button color="primary" (click)="OnRegister()">Sign Up</button>
+  </div>
+</div>
